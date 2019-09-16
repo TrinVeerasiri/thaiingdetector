@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Upload your meal picture</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document">
+    <button type="submit">Upload file</button>
+  </form>
+  {% if url %}
+  	<br></br>
+    <h5>Original Image</h5>
+  	<img src="data:;base64,{{ original }}" style="width: 30%; height: 30%;"/>
+    <br></br>
+  	<h5>Ingredient found</h5>
+  	<!-- <img src="data:;base64,{{ masks }}" style="width: 30%; height: 30%;"/> -->
+    <!-- {% for mask in masks %} -->
+      <!-- <img src="data:;base64,{{ mask }}" style="width: 10%; height: 10%;"/> -->
+      <!-- <img src="{{ post.image.url }}"> -->
+    <!-- {% endfor %} -->
+    {% if result %}
+      {% for ingredient, mask in result.items %}
+        <img src="data:;base64,{{ mask }}" style="width: 10%; height: 10%;"/>
+        <strong>{{ ingredient }}</strong>
+        <br></br>
+      {% endfor %}
+      <!-- <p>Ingredients: <a href="{{ scores }}">{{ scores }}</a></p> -->
+    {% else %}
+      Ingredients not found!!!
+    {% endif %}
+  {% endif %}
+{% endblock %}
