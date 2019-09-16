@@ -10,7 +10,8 @@ num_classes = len(categories)
 threshold = 0.5
 
 #Find relative path to 'model.pt'
-dirname = os.path.dirname(__file__)
+# dirname = os.path.dirname(__file__)
+dirname = os.getcwd()
 filename = os.path.join(dirname, 'model.pt')
 
 model = get_model(num_classes)
