@@ -11,7 +11,7 @@ Clone the repository to your local machine:
 https://github.com/TrinVeerasiri/thaiingdetector.git
 ```
 
-***The model is a large file and must download separate.
+***The model is a large file and must download separately.
 The model is in thaiingdetector/model.pt (337 MB).
 At local, put put this file in same directory (in thaiingdetector-master).
 
