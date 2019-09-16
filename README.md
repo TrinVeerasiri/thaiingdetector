@@ -29,4 +29,4 @@ Run the development server:
 python manage.py runserver
 ```
 
-The project available at **127.0.0.1:8000**.
+The project available at **127.0.0.1:8000**
